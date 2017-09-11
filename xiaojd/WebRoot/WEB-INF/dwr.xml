@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+    "http://getahead.org/dwr/dwr20.dtd">
+    
+<dwr>
+  <allow>
+    <create creator="new" javascript="XiaoJD" scope="page">
+      	<param name="class" value="com.xiaojd.dwr.XiaoJD"/>
+    </create>
+
+	<convert match="java.lang.Exception" converter="exception"> 
+	    <param name='include' value='message'/> 
+	</convert> 
+  </allow>
+</dwr>

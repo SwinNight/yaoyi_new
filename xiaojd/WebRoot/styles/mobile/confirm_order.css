@@ -1,0 +1,6 @@
+.footerbtn a.active .icon-user{
+	background-image: url(../images/icon_user.png);
+}
+.footerbtn a.active .icon-new{
+	background-image: url(../images/icon_newa.png) !important;
+}

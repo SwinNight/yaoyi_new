@@ -1,0 +1,148 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+#box{
+	width: 100%;
+	height: 100%;
+}
+.container {
+    margin: 0 auto;
+    min-height: 300px;
+    width: 100%;
+}
+.header {
+    background: rgb(35, 99, 195);
+    height: 60px;
+    position: relative;
+    width: 100%;
+}
+.header .home {
+    color: #FFFFFF;
+    display: block;
+    left: 0;
+    padding: 13px 20px;
+    position: absolute;
+}
+.header .header-icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    height: 22px;
+    margin: 0 auto;
+    width: 22px;
+}
+.header .header-icon-return {
+    background-image: url(../images/icon_return.png);
+}
+.header .title {
+    line-height: 1.5em;
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff;
+    vertical-align: middle;
+    padding: 0.7em 0px;
+    font-family: "微软雅黑";
+    max-width: 200px;
+    width: 200px;
+    margin: 0px auto;
+    overflow: hidden;
+    height: 22px;
+}
+.content{
+	width: 100%;
+    overflow:auto;
+    top:60px;
+    position:absolute;
+    z-index:10;
+    bottom:60px;
+    padding-top: 10px;
+	background-color: #fff;
+	overflow-x: hidden;
+}
+.content div{
+	width:100%;
+	height:50px;
+	line-height: 50px;
+	margin: 0 auto;
+	font-size: 16px;
+	padding-left: 80px;
+}
+.content div span{
+	width:50px;
+	display: block;
+	height:50px;
+	float: left;
+}
+.content div input{
+	display: block;
+	float: left;
+	width:100px;
+	margin-top: 10px;
+}
+.content div select{
+	display: block;
+	width:100px;
+	float: left;
+	margin-top: 10px;
+}
+.content div div{
+	float: left;
+	width: 50px;
+	height: 30px;
+	color:#fff;
+	text-align: center;
+	line-height: 30px;
+	padding: 0;
+	margin-right: 30px;
+	font-size: 16px;
+	background-color: rgb(35, 99, 195);
+}
+.content div.tit span{
+	display: block;
+	width: 100%;
+	color:red;
+}
+.footerbtn{background:#fff;bottom:0;position:fixed;width:100%;height:60px;margin: 0 auto;min-width: 320px;}
+.footerbtn ul li {
+    float: left;
+    height: 60px;
+    width: 33.333333%;
+    text-align: center;
+}
+.footerbtn a {
+    color: #333;
+    text-decoration: none;
+    margin: 7px 0;
+    display: block;
+}
+.footerbtn a.active {
+    color: rgb(35, 99, 195);
+}
+a:link, a:visited {
+    font-style: normal;
+}
+.footerbtn a .icon-new {
+    background-image: url(../images/user_center_c.png);
+}
+.footerbtn a .icon-all {
+    background-image: url(../images/ico_user_a.png);
+}
+.footerbtn .icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    height: 22px;
+    margin: 0 auto;
+    width: 22px;
+}
+.footerbtn a .icon-user {
+    background-image: url(../images/icon_user.png);
+}

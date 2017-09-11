@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
+
+ <context:component-scan base-package="com.xiaojd.controller" />
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="webBindingInitializer">
+			<bean class="com.xiaojd.convert.DataBinding" />
+		</property>
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="exceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="com.xiaojd.exception.SystemException">error/500</prop>
+				<prop key="com.xiaojd.exception.BusinessException">error/errorpage</prop>
+				<prop key="java.lang.exception">error/500</prop>
+			</props>
+		</property>
+	</bean>
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/*" />
+			<bean class="com.xiaojd.interceptor.SessionInterceptor">
+				<property name="excludedUrls">
+					<list>
+					   <value>/xiaojd/mobileLoginPtA</value>
+					   <value>/xiaojd/mobileLoginPt</value>
+					    <value>/xiaojd/ptChangePassword</value>
+					    <value>/xiaojd/logoutPt</value>
+						<value>/xiaojd/loginPtA</value>
+					    <value>/xiaojd/loginPt</value>
+						<value>/xiaojd/login</value>
+						<value>/xiaojd/loginA</value>
+						<value>/xiaojd</value>
+						<value>/xiaojd/</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
+	<bean id="timerFactory" class="org.springframework.scheduling.timer.TimerFactoryBean"
+		lazy-init="false">
+		<property name="scheduledTimerTasks">
+			<list>
+				<!-- <ref local="scheduledTask" /> -->
+				<ref local="initTask" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="xiaojdTask" class="com.xiaojd.task.XiaojdTask">
+		<!-- <property name="name" value="sysTask"/> --><!-- 若要传递参数则使用setter与getter方法 -->
+	</bean>
+
+    <bean id="DailyTaskQtzJobMethod" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">  
+        <property name="targetObject" ref="xiaojdTask" />  
+        <property name="targetMethod" value="run" />
+        <property name="concurrent" value="false" />  
+    </bean> 
+   
+	<bean id="DailyTaskCronTriggerBean" class="org.springframework.scheduling.quartz.CronTriggerBean">  
+        <property name="jobDetail" ref="DailyTaskQtzJobMethod"></property>  
+        <!-- 每天凌晨02:00和05：00触发   -->
+        <property name="cronExpression" value="0 0 2 ? * *"></property> 
+        <!--5秒执行一次，测试用  -->
+        <!--<property name="cronExpression" value="0/5 * * * * ?"></property> -->
+    </bean>  
+   
+    <bean id="SpringJobSchedulerFactoryBean" class="com.xiaojd.interceptor.SchedulerFactoryBeanWithShutdownDelay">  
+        <property name="triggers">  
+            <list>   
+                <ref bean="DailyTaskCronTriggerBean"/> 
+            </list>
+        </property>  
+    </bean> 
+
+	<!-- <bean id="methodInvokingTask"
+		class="org.springframework.scheduling.timer.MethodInvokingTimerTaskFactoryBean">
+		<property name="targetObject" ref="xiaojdTask" />
+		<property name="targetMethod" value="run" />
+	</bean>
+
+	<bean id="scheduledTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+		<property name="delay" value="7200000" />
+		<property name="period" value="7200000" />
+		<property name="delay" value="5000" />
+		<property name="period" value="2000" />
+		<property name="timerTask">
+			<ref bean="methodInvokingTask" />
+		</property>
+	</bean> -->
+
+	<!-- 系统初始化 -->
+	<bean id="systemInitTask" class="com.xiaojd.task.SystemInit">
+		<!-- <property name="name" value="sysTask"/> --><!-- 若要传递参数则使用setter与getter方法 -->
+	</bean>
+
+	<bean id="initInvokingTask"
+		class="org.springframework.scheduling.timer.MethodInvokingTimerTaskFactoryBean">
+		<property name="targetObject" ref="systemInitTask" />
+		<property name="targetMethod" value="run" />
+	</bean>
+
+	<bean id="initTask" class="org.springframework.scheduling.timer.ScheduledTimerTask">
+		<property name="delay" value="3500" />
+		<property name="period" value="0" /><!-- 设置为0只执行一次 -->
+		<property name="timerTask">
+			<ref bean="initInvokingTask" />
+		</property>
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8" />
+		<property name="maxUploadSize" value="10485760000" />
+		<property name="maxInMemorySize" value="40960" />
+	</bean>
+  
+</beans>

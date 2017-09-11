@@ -1,0 +1,38 @@
+.container{
+	width: 100%;
+	position: absolute;
+	top:240px;
+	bottom:60px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+.container input{
+	width:80%;
+	display: block;
+	margin: 0 auto;
+}
+.container form{
+	display: block;
+	width:100%;
+	margin: 0 !important;
+}
+.container div .fl{
+	width: 40%;
+	margin-left: 20px;
+}
+.container div .fl input{
+	float: left !important;
+	display: block;
+	width:15px;
+	height:15px;
+}
+.container div .fl span{
+	float: left;
+	width: 60px;
+	height: 20px;
+}
+.footer{
+	position: absolute;
+	left:0;
+	bottom:-60px;
+}

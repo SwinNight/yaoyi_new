@@ -1,0 +1,50 @@
+.content{
+	width: 100%;
+	overflow: auto;
+	position: absolute;
+	top:60px;
+	bottom:60px;
+	background-color: #fff;
+}
+.footer{
+	width:100%;
+	height: 60px;
+	background-color: #f60;
+}
+.footerbtn{background:#fff;bottom:0;position:fixed;width:100%;height:60px;margin: 0 auto;min-width: 320px;}
+.footerbtn ul li {
+    float: left;
+    height: 60px;
+    width: 33.333333%;
+    text-align: center;
+}
+.footerbtn a {
+    color: #333;
+    text-decoration: none;
+    margin: 7px 0;
+    display: block;
+}
+.footerbtn a.active {
+    color: rgb(35, 99, 195);
+}
+a:link, a:visited {
+    font-style: normal;
+}
+.footerbtn a.active .icon-new {
+    background-image: url(../images/user_center.png);
+}
+.footerbtn a .icon-all {
+    background-image: url(../images/ico_user_c.png);
+}
+.footerbtn .icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    height: 22px;
+    margin: 0 auto;
+    width: 22px;
+}
+.footerbtn a .icon-user {
+    background-image: url(../images/icon_user.png);
+}

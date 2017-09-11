@@ -1,0 +1,3 @@
+	function AddTab() {
+		this.tit ();
+	}

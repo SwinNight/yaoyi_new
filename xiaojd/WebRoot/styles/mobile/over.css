@@ -1,0 +1,214 @@
+*{
+padding: 0;
+margin: 0;
+list-style: none;
+}
+html,body{
+width: 100%;
+height: 100%;
+}
+#box{
+width: 100%;
+height: 100%;
+overflow:hidden;
+}
+body {
+margin: 0 auto;
+min-width: 320px;
+overflow:hidden;
+}
+a:link,a:visited{ font-style: normal;}
+img {
+border: 0 none;
+height: auto;
+max-width: 100%;
+vertical-align: middle;
+}
+.unstyled{list-style:0;margin:0;padding:0;}
+.header {
+background:rgb(35, 99, 195); /*#6ac134;*/
+height: 60px;
+position: relative;
+width: 100%;
+}
+.header .title {
+line-height: 1.5em;
+text-align: center;
+font-size: 1.5em;
+color: #fff;
+vertical-align: middle;
+padding: 0.7em 0px;
+font-family: "寰蒋闆呴粦";
+max-width: 200px;
+width: 200px;
+margin: 0px auto;
+overflow: hidden;
+height: 22px;
+}
+.header .home{    color: #FFFFFF;
+display: block;
+left: 0;
+padding: 13px 20px;
+position: absolute;}
+.header .back{    color: #FFFFFF;
+display: block;
+right: 0px;
+top: 0px;
+padding: 13px 20px;
+position: absolute;}
+.header .header-icon {
+background-position: center center;
+background-repeat: no-repeat;
+background-size: 100% 100%;
+display: block;
+height: 22px;
+margin: 0 auto;
+width: 22px;
+}
+.header .header-icon-home {
+background-image: url("../images/icon_home.png");
+}
+
+.header .header-icon-return {
+background-image: url("../images/icon_return.png");
+}
+.container{  margin: 0 auto;min-height: 300px; width: 100%;}
+.content{
+	width:100%;
+	height: 100%;
+	overflow-x: hidden;
+	background-color: #fff;
+}
+.content .content_top{
+	width:100%;
+	height:90px;
+}
+.content .content_top div{
+	width:100%;
+	height:20px;
+	font-size: 12px;
+	color: #000;
+	padding-left: 5px;
+	background-color: #fff;
+	border-bottom: 1px solid #Ccc;
+	box-sizing: border-box;
+}
+.content .content_top div span{
+	width: 50px;
+	height:20px;
+	float: left;
+	display: block;
+	line-height: 20px;
+}
+.content .content_top div.address{
+	height:30px;
+}
+.content .content_top div.address span{
+	display: block;
+	height:100%;
+	line-height: 25px;
+	float: left;
+}
+.content .content_top div.address span:nth-child(2){
+	width:80%;
+	padding-left: 0;
+}
+.content_inner{
+	position: absolute;
+	top:150px;
+	left:0;
+	bottom:60px;
+	width:100%;
+	overflow: auto;
+	font-size: 12px;
+	border: 1px solid #ccc;
+	background-color: #fefefe;
+}
+.content_inner .inner_box{
+	width:100%;
+	height:100px;
+	box-shadow: 5px 5px 5px #ececec;
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+.content_inne span{
+	line-height: 20px;
+}
+.content_footer {
+	position: fixed;
+	left:0;
+	bottom:0;
+	width:100%;
+	height:50px;
+}
+.content_footer div{
+	width:70px;
+	height:40px;
+	line-height: 40px;
+	float: right;
+	margin-left: 30px;
+	background-color: #08c;
+	color:#fff;
+}
+.content_footer div a{
+	display: block;
+	width:100%;
+	height: 100%;
+	overflow: hidden;
+	text-decoration: none;
+	color:#fff;
+	text-align: center;
+}
+.content .content_top div.logistics{
+	height: 40px;
+}
+.pics{
+	margin-top: 20px;
+	width:100%;
+	height: auto;
+}
+.pic_box{
+	width: 100px;
+	height: 100px;
+	float: left;
+	min-height: 100px;
+	position: relative;
+	overflow: hidden;
+}
+.pics img{
+	display: block;
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin-left: 10px;
+	overflow:hidden;
+}
+.layer{
+	position: fixed;
+	top:25px;
+	left:0;
+	display: none;
+	width:90%;
+	margin-left: 5%;
+	height:auto;
+}
+.layer img{
+	display: block;
+	width: 100%;
+	max-height: 400px;
+	height: auto;
+}
+.layer span{
+	display: block;
+	position: absolute;
+	right:-7px;
+	top:-10px;
+	width: 20px;
+	height: 20px;
+	z-index:999;
+	opacity: 1;
+	background: url('../images/delate.jpg') no-repeat center center; 
+}
+

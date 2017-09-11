@@ -1,0 +1,166 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+}
+#box{
+	width: 100%;
+	height: 100%;
+}
+.container {
+    margin: 0 auto;
+    min-height: 300px;
+    width: 100%;
+}
+.header {
+    background: rgb(35, 99, 195);
+    height: 60px;
+    position: relative;
+    width: 100%;
+}
+.header .home {
+    color: #FFFFFF;
+    display: block;
+    left: 0;
+    padding: 13px 20px;
+    position: absolute;
+}
+.header .header-icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    height: 22px;
+    margin: 0 auto;
+    width: 22px;
+}
+.header .header-icon-return {
+    background-image: url(../images/mobile/icon_return.png);
+}
+.header .title {
+    line-height: 1.5em;
+    text-align: center;
+    font-size: 1.5em;
+    color: #fff;
+    vertical-align: middle;
+    padding: 0.7em 0px;
+    font-family: "微软雅黑";
+    max-width: 200px;
+    width: 200px;
+    margin: 0px auto;
+    overflow: hidden;
+    height: 22px;
+}
+.content{
+	width: 100%;
+    overflow:auto;
+    top:60px;
+    position:absolute;
+    z-index:10;
+    bottom:60px;
+	background-color: #fff;
+}
+.content_header{
+	width: 100%;
+	height: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.content_header input{
+	display: block;
+	width:40%;
+	margin-right: 10%;
+	margin-left: 20%;
+	float: left;
+}
+.content_header span{
+	float: left;
+	color:#fff;
+	width:50px;
+	height: 30px;
+	display: block;
+	line-height: 30px;
+	background-color: rgb(35, 99, 195);
+	text-align: center;
+}
+.content .user_box{
+	color:#333;
+	position: relative;
+	border-radius: 10px;
+	margin: 8px 10px;
+	width:90%;
+	height:120px;
+	padding:10px;
+	box-sizing: border-box;
+	background-color: #f8f8f8;
+}
+.content .user_box a{
+	text-decoration: none;
+	color:#222;
+}
+.content .user_box div{
+	float: left;
+	width: 60%;
+	height: 30px;
+	line-height: 30px;
+}
+.content .user_box div.user_num{
+width: 100%;
+}
+.content .user_box div.user_pwd span{
+	width: 50px;
+	float: left;
+}
+.content .user_box div.user_pwd span.pwd{
+	float: left;
+	width: 100px;
+	color:#333 !important;
+}
+.content .user_box div.user_name,.content .user_box div.login_name{
+	width: 40%;
+}
+.content .user_box div span{
+	line-height: 30px;
+}
+
+.footerbtn{background:#fff;bottom:0;position:fixed;width:100%;height:60px;margin: 0 auto;min-width: 320px;}
+.footerbtn ul li {
+    float: left;
+    height: 60px;
+    width: 33.333333%;
+    text-align: center;
+}
+.footerbtn a {
+    color: #333;
+    text-decoration: none;
+    margin: 7px 0;
+    display: block;
+}
+.footerbtn a.active {
+    color: rgb(35, 99, 195);
+}
+a:link, a:visited {
+    font-style: normal;
+}
+.footerbtn a.active .icon-new {
+    background-image: url(../images/user_center.png);
+}
+.footerbtn a .icon-all {
+    background-image: url(../images/ico_user_c.png);
+}
+.footerbtn .icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: block;
+    height: 22px;
+    margin: 0 auto;
+    width: 22px;
+}
+.footerbtn a .icon-user {
+    background-image: url(../images/icon_user.png);
+}
